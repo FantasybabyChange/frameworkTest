@@ -1,6 +1,10 @@
 package com.fantasybaby.config;
 
 import com.fantasybaby.ability.IAbility;
+import com.fantasybaby.ability.ISuperHero;
+import com.fantasybaby.ability.impl.FlashMan;
+import com.fantasybaby.ability.impl.SpeedForceImpl;
+import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.ComponentScan;
 import org.springframework.context.annotation.Configuration;
 
@@ -11,7 +15,14 @@ import org.springframework.context.annotation.Configuration;
 @Configuration
 //@ComponentScan(basePackages = "com.fantasybaby")
 //最好使用这种形式
-@ComponentScan(basePackageClasses = IAbility.class)
+//@ComponentScan(basePackageClasses = IAbility.class)
 public class SpringTestConfig {
-
+    @Bean
+    public ISuperHero setSuperHero(){
+        return new FlashMan();
+    }
+    @Bean
+    public IAbility setAbility(){
+        return new SpeedForceImpl();
+    }
 }
