@@ -35,6 +35,7 @@
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
     <!--<spring.version>4.1.4.RELEASE</spring.version>-->
 	  <spring.version>5.0.4.RELEASE</spring.version>
+	  <lombok.version>1.16.18</lombok.version>
   </properties>
 	<dependencyManagement>
 		<dependencies>
@@ -190,6 +191,11 @@
 			<groupId>velocity-tools</groupId>
 			<artifactId>velocity-tools</artifactId>
 			<version>2.0-beta1</version>
+		</dependency>
+		<dependency>
+			<groupId>org.projectlombok</groupId>
+			<artifactId>lombok</artifactId>
+			<version>${lombok.version}</version>
 		</dependency>
 	<!-- jedis jar -->
 		<dependency>
