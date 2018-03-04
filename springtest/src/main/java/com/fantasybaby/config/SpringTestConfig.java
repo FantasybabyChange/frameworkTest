@@ -4,9 +4,7 @@ import com.fantasybaby.ability.IAbility;
 import com.fantasybaby.ability.ISuperHero;
 import com.fantasybaby.ability.impl.FlashMan;
 import com.fantasybaby.ability.impl.SpeedForceImpl;
-import org.springframework.context.annotation.Bean;
-import org.springframework.context.annotation.ComponentScan;
-import org.springframework.context.annotation.Configuration;
+import org.springframework.context.annotation.*;
 
 /**
  * @author liuxi
@@ -16,6 +14,9 @@ import org.springframework.context.annotation.Configuration;
 //@ComponentScan(basePackages = "com.fantasybaby")
 //最好使用这种形式
 //@ComponentScan(basePackageClasses = IAbility.class)
+//引入其他配置
+//@Import()
+//@ImportResource
 public class SpringTestConfig {
     @Bean
     public ISuperHero setSuperHero(){

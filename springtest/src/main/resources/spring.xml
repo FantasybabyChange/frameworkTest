@@ -7,9 +7,13 @@
        http://www.springframework.org/schema/context
        http://www.springframework.org/schema/context/spring-context.xsd">
     <!--<context:component-scan base-package="com.fantasybaby"/>-->
+    <!-- 引入其他的bean-->
+    <!--<import resource="spring.xml"/>-->
+    <!--<bean class="com.fantasybaby.config.SpringTestConfig"/>-->
     <bean id="speedForceImpl" class="com.fantasybaby.ability.impl.SpeedForceImpl"></bean>
     <bean class="com.fantasybaby.ability.impl.FlashMan">
         <!--use constructor -->
         <constructor-arg ref="speedForceImpl"/>
+
     </bean>
 </beans>
