@@ -19,10 +19,12 @@ import org.springframework.context.annotation.*;
 //@ImportResource
 public class SpringTestConfig {
     @Bean
+    @Profile("dev")
     public ISuperHero setSuperHero(){
         return new FlashMan();
     }
     @Bean
+    @Profile("dev")
     public IAbility setAbility(){
         return new SpeedForceImpl();
     }
