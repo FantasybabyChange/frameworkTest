@@ -7,7 +7,7 @@ import org.springframework.stereotype.Component;
  * @author liuxi
  * @date2018年02月26日 16:28
  */
-@Component()
+@Component("speed")
 public class SpeedForceImpl implements IAbility{
     @Override
     public String getPowerName() {

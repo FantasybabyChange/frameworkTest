@@ -2,8 +2,10 @@ package com.fantasybaby.config;
 
 import com.fantasybaby.ability.IAbility;
 import com.fantasybaby.ability.ISuperHero;
+import com.fantasybaby.ability.impl.FlashKid;
 import com.fantasybaby.ability.impl.FlashMan;
 import com.fantasybaby.ability.impl.SpeedForceImpl;
+import com.fantasybaby.condition.CreateBeanCondition;
 import org.springframework.context.annotation.*;
 
 /**
@@ -18,7 +20,7 @@ import org.springframework.context.annotation.*;
 //@Import()
 //@ImportResource
 public class SpringTestConfig {
-    @Bean
+    @Bean(name="flash")
     @Profile("dev")
     public ISuperHero setSuperHero(){
         return new FlashMan();
@@ -27,5 +29,10 @@ public class SpringTestConfig {
     @Profile("dev")
     public IAbility setAbility(){
         return new SpeedForceImpl();
+    }
+    @Bean(name="flashKid")
+    @Conditional(CreateBeanCondition.class)
+    public ISuperHero setFlashKid(){
+        return new FlashKid();
     }
 }

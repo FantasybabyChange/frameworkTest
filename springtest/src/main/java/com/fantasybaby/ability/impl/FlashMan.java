@@ -15,7 +15,7 @@ import org.springframework.stereotype.Component;
 @Component
 @NoArgsConstructor
 public class FlashMan implements ISuperHero {
-    //@Inject
+    @Inject
     private IAbility ability;
 
     public FlashMan(IAbility ability){

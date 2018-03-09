@@ -29,8 +29,10 @@ import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 public class BeanWiringTest {
     @Inject
     private IAbility ability;
-    @Inject
+    //@Inject
     private ISuperHero superHero;
+    @Inject
+    private ISuperHero flashKid;
 
     /**
      * 使用两个实例
@@ -38,6 +40,13 @@ public class BeanWiringTest {
     @Test
     public void testScanBean(){
         superHero.usePower();
+    }
 
+    /**
+     * 通过条件创建实例
+     */
+    @Test
+    public void testConditionBean(){
+        flashKid.usePower();
     }
 }
