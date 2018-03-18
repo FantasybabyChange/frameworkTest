@@ -7,6 +7,7 @@ import com.fantasybaby.ability.IAbility;
 import com.fantasybaby.ability.ISuperHero;
 import com.fantasybaby.ability.impl.FlashMan;
 import com.fantasybaby.ability.impl.SpeedForceImpl;
+import com.fantasybaby.annotation.FlashKidAnnotation;
 import com.fantasybaby.config.SpringTestConfig;
 import org.junit.Assert;
 import org.junit.Test;
@@ -32,6 +33,7 @@ public class BeanWiringTest {
     //@Inject
     private ISuperHero superHero;
     @Inject
+    @FlashKidAnnotation
     private ISuperHero flashKid;
 
     /**
@@ -48,5 +50,13 @@ public class BeanWiringTest {
     @Test
     public void testConditionBean(){
         flashKid.usePower();
+    }
+
+    /**
+     * 通过注解自定义注解加载Bean
+     */
+    @Test
+    public void testBeanByAnnotation(){
+            flashKid.usePower();
     }
 }
