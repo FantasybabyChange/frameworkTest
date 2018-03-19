@@ -30,9 +30,9 @@ public class BeanWiringTest {
     @Inject
     private IAbility ability;
     //@Inject
-    private ISuperHero superHero;
+    //private ISuperHero superHero;
     @Inject
-    private ISuperHero flashKid;
+    private ISuperHero superHero;
 
     /**
      * 使用两个实例
@@ -44,9 +44,11 @@ public class BeanWiringTest {
 
     /**
      * 通过条件创建实例
+     * 添加primary注解
+     * 解决spring歧义
      */
     @Test
     public void testConditionBean(){
-        flashKid.usePower();
+        superHero.usePower();
     }
 }

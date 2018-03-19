@@ -21,6 +21,7 @@ import org.springframework.context.annotation.*;
 //@ImportResource
 public class SpringTestConfig {
     @Bean(name="flash")
+    @Primary
     @Profile("dev")
     public ISuperHero setSuperHero(){
         return new FlashMan();
