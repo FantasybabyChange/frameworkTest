@@ -5,6 +5,7 @@ import com.fantasybaby.ability.ISuperHero;
 import com.fantasybaby.ability.impl.FlashKid;
 import com.fantasybaby.ability.impl.FlashMan;
 import com.fantasybaby.ability.impl.SpeedForceImpl;
+import com.fantasybaby.annotation.FlashKidAnnotation;
 import com.fantasybaby.condition.CreateBeanCondition;
 import org.springframework.context.annotation.*;
 
@@ -31,7 +32,9 @@ public class SpringTestConfig {
     public IAbility setAbility(){
         return new SpeedForceImpl();
     }
-    @Bean(name="flashKid")
+//    @Bean(name="flashKid")
+    @Bean
+    @FlashKidAnnotation
     @Conditional(CreateBeanCondition.class)
     public ISuperHero setFlashKid(){
         return new FlashKid();
