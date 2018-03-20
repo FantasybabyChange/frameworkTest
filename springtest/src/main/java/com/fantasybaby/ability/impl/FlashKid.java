@@ -5,6 +5,9 @@ import javax.inject.Inject;
 import com.fantasybaby.ability.IAbility;
 import com.fantasybaby.ability.ISuperHero;
 import lombok.NoArgsConstructor;
+import org.springframework.beans.factory.config.ConfigurableListableBeanFactory;
+import org.springframework.context.annotation.MBeanExportConfiguration;
+import org.springframework.context.annotation.Scope;
 import org.springframework.stereotype.Component;
 
 /**
@@ -13,6 +16,7 @@ import org.springframework.stereotype.Component;
  */
 @Component("flashKid")
 @NoArgsConstructor
+@Scope(ConfigurableListableBeanFactory.SCOPE_SINGLETON)
 public class FlashKid  implements ISuperHero {
     @Inject
     private IAbility speed;
