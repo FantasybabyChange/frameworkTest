@@ -32,10 +32,11 @@ public class BeanWiringTest {
     private IAbility ability;
     //@Inject
     //private ISuperHero superHero;
+    /*@Inject
+    private ISuperHero superHero;*/
+    @FlashKidAnnotation
     @Inject
     private ISuperHero superHero;
-    @FlashKidAnnotation
-    private ISuperHero flashKid;
 
 
     /**
@@ -61,6 +62,11 @@ public class BeanWiringTest {
      */
     @Test
     public void testBeanByAnnotation(){
-            flashKid.usePower();
+            superHero.usePower();
+    }
+
+    @Test
+    public void testGetValueFromProperties(){
+        System.out.println(superHero.getSuperHeroName());
     }
 }
