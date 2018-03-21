@@ -19,7 +19,7 @@ import org.springframework.stereotype.Component;
 @Component("flashKid")
 //@NoArgsConstructor
 @FlashKidAnnotation
-@PropertySource("classpath:values.properties")
+//@PropertySource("classpath:values.properties")
 @Scope(ConfigurableListableBeanFactory.SCOPE_SINGLETON)
 public class FlashKid  implements ISuperHero {
     @Inject

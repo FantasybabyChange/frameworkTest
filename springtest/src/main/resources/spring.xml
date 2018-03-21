@@ -11,6 +11,15 @@
     <!--<import resource="spring.xml"/>-->
     <!--<bean class="com.fantasybaby.config.SpringTestConfig"/>-->
     <bean id="speedForceImpl" class="com.fantasybaby.ability.impl.SpeedForceImpl"></bean>
+        <!-- 引入属性文件-->
+    <context:property-placeholder location="values.properties"></context:property-placeholder>
+    <!--<bean id="placeHolderConfig" class="org.springframework.context.support.PropertySourcesPlaceholderConfigurer" >
+         <property name="locations">
+             <list>
+                 <value>values.properties</value>
+             </list>
+         </property>
+    </bean>-->
     <bean class="com.fantasybaby.ability.impl.FlashMan">
         <!--use constructor -->
         <constructor-arg ref="speedForceImpl"/>

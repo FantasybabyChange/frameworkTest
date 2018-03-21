@@ -25,7 +25,7 @@ import org.springframework.core.env.Environment;
 //引入其他配置
 //@Import()
 //@ImportResource
-
+@PropertySource("classpath:values.properties")
 public class SpringTestConfig {
     @Inject
     private Environment environment;
@@ -51,8 +51,12 @@ public class SpringTestConfig {
         //return new FlashKid();
     }*/
 
-    /*@Bean
+    /**
+     * 指定properties文件相关配置
+     * @return
+     */
+    @Bean
     public static PropertySourcesPlaceholderConfigurer placeholderConfigurer(){
         return new PropertySourcesPlaceholderConfigurer();
-    }*/
+    }
 }
