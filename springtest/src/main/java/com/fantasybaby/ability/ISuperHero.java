@@ -10,4 +10,8 @@ public interface ISuperHero {
     }
 
     void usePower();
+
+    default  void useWeapon(){
+
+    }
 }

@@ -1,8 +1,13 @@
 package com.fantasybaby.aop;
 
 import lombok.extern.slf4j.Slf4j;
+import org.aspectj.lang.ProceedingJoinPoint;
+import org.aspectj.lang.annotation.After;
+import org.aspectj.lang.annotation.AfterReturning;
+import org.aspectj.lang.annotation.Around;
 import org.aspectj.lang.annotation.Aspect;
 import org.aspectj.lang.annotation.Before;
+import org.aspectj.lang.annotation.Pointcut;
 import org.springframework.stereotype.Component;
 
 /**Over watch 用来监控super hero使用
@@ -16,8 +21,30 @@ public class OverWatch {
     /**
      * 前置通知
      */
-    @Before("execution(* com.fantasybaby.ability.ISuperHero.usePower(..))")
+    @Pointcut("execution(* com.fantasybaby.ability.ISuperHero.usePower(..))")
     public void monitorSuperPower(){
-       log.info("==============monitorSuperPower===========");
+    }
+    @Before("monitorSuperPower()")
+    public void beforeMonitorSuperPower(){
+        log.info("==============before monitorSuperPower===========");
+    }
+    @After("monitorSuperPower()")
+    public void afterMonitorSuperPower(){
+        log.info("==============after monitorSuperPower===========");
+    }
+    @AfterReturning("monitorSuperPower()")
+    public void afterReturnMonitorSuperPower(){
+        log.info("==============after return monitorSuperPower===========");
+    }
+    @Around("monitorSuperPower()")
+    public void aroundMonitorSuperPower(ProceedingJoinPoint joinPoint){
+        log.info("==============start around monitorSuperPower===========");
+        try {
+            joinPoint.proceed();
+            log.info("==============end around monitorSuperPower===========");
+        } catch (Throwable throwable) {
+            throwable.printStackTrace();
+        }
+
     }
 }

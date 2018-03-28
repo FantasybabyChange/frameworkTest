@@ -17,7 +17,7 @@ import org.springframework.stereotype.Component;
  * @author liuxi
  * @date2018年03月08日 16:53
  */
-@Component("flashKid")
+@Component()
 //@NoArgsConstructor
 @FlashKidAnnotation
 //@PropertySource("classpath:values.properties")

@@ -21,6 +21,7 @@
   <!-- 聚合 -->
 	<modules>
 		<module>springtest</module>
+		<module>fantasybaby-common</module>
 		<!-- SpringMVC+mybatis -->
 		<!-- <module>../user-dao-mybatis-mvc</module> -->
 		<!-- <module>../user-dao-mabatis</module>
@@ -30,6 +31,7 @@
 		<module>../user-common-bean</module>
     	<module>../webServiceTest</module>
 		<module>../webscoket</module> -->
+    <module>fantasybaby-common</module>
   </modules>
   <properties>
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>

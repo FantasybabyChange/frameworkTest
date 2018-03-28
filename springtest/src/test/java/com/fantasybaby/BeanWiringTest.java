@@ -31,8 +31,8 @@ import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 public class BeanWiringTest {
     @Inject
     private IAbility ability;
-    //@Inject
-    //private ISuperHero superHero;
+    @Inject
+    private ISuperHero flash;
     /*@Inject
     private ISuperHero superHero;*/
     @FlashKidAnnotation
@@ -73,5 +73,13 @@ public class BeanWiringTest {
     @Test
     public void testAopUserPower(){
         superHero.usePower();
+    }
+
+    /**
+     * 限定bean来做切面
+     */
+    @Test
+    public void testAOPWithSpecialBean(){
+        flash.usePower();
     }
 }
