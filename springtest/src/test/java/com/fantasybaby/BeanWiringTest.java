@@ -9,6 +9,7 @@ import com.fantasybaby.ability.impl.FlashMan;
 import com.fantasybaby.ability.impl.SpeedForceImpl;
 import com.fantasybaby.annotation.FlashKidAnnotation;
 import com.fantasybaby.config.SpringTestConfig;
+import lombok.extern.slf4j.Slf4j;
 import org.junit.Assert;
 import org.junit.Test;
 import org.junit.runner.RunWith;
@@ -26,7 +27,7 @@ import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 @ContextConfiguration(classes = SpringTestConfig.class)
 @ActiveProfiles("dev")
 //@ContextConfiguration(locations = "classpath:spring.xml")
-
+@Slf4j
 public class BeanWiringTest {
     @Inject
     private IAbility ability;
@@ -67,6 +68,6 @@ public class BeanWiringTest {
 
     @Test
     public void testGetValueFromProperties(){
-        System.out.println(superHero.getSuperHeroName());
+        log.info("======"+superHero.getSuperHeroName());
     }
 }

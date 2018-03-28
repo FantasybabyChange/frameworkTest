@@ -6,6 +6,7 @@ import com.fantasybaby.ability.IAbility;
 import com.fantasybaby.ability.ISuperHero;
 import com.fantasybaby.annotation.FlashKidAnnotation;
 import lombok.NoArgsConstructor;
+import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.beans.factory.config.ConfigurableListableBeanFactory;
 import org.springframework.context.annotation.PropertySource;
@@ -20,6 +21,7 @@ import org.springframework.stereotype.Component;
 //@NoArgsConstructor
 @FlashKidAnnotation
 //@PropertySource("classpath:values.properties")
+@Slf4j
 @Scope(ConfigurableListableBeanFactory.SCOPE_SINGLETON)
 public class FlashKid  implements ISuperHero {
     @Inject
@@ -37,7 +39,7 @@ public class FlashKid  implements ISuperHero {
 
     @Override
     public void usePower() {
-        System.out.println(getSuperHeroName() +"start use Power");
+        log.info(getSuperHeroName() +"start use Power");
         speed.showPower();
     }
 }

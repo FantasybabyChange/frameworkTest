@@ -26,6 +26,7 @@ import org.springframework.core.env.Environment;
 //@Import()
 //@ImportResource
 @PropertySource("classpath:values.properties")
+@EnableAspectJAutoProxy
 public class SpringTestConfig {
     @Inject
     private Environment environment;

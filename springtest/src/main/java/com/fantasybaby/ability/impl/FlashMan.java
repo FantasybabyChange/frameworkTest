@@ -5,6 +5,7 @@ import javax.inject.Inject;
 import com.fantasybaby.ability.IAbility;
 import com.fantasybaby.ability.ISuperHero;
 import lombok.NoArgsConstructor;
+import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Primary;
 import org.springframework.stereotype.Component;
@@ -15,6 +16,7 @@ import org.springframework.stereotype.Component;
  */
 @Component
 @NoArgsConstructor
+@Slf4j
 public class FlashMan implements ISuperHero {
     @Inject
     private IAbility ability;
@@ -31,8 +33,8 @@ public class FlashMan implements ISuperHero {
 
     @Override
     public void usePower() {
-        System.out.println("flash use power start");
+        log.info("flash use power start");
         ability.showPower();
-        System.out.println("flash use power end");
+        log.info("flash use power end");
     }
 }

@@ -1,6 +1,7 @@
 package com.fantasybaby.ability.impl;
 
 import com.fantasybaby.ability.IAbility;
+import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Component;
 
 /**
@@ -8,6 +9,7 @@ import org.springframework.stereotype.Component;
  * @date2018年02月26日 16:28
  */
 @Component("speed")
+@Slf4j
 public class SpeedForceImpl implements IAbility{
     @Override
     public String getPowerName() {
@@ -17,6 +19,6 @@ public class SpeedForceImpl implements IAbility{
 
     @Override
     public void showPower() {
-        System.out.println("speedForce,through the time and space.");
+        log.info("speedForce,through the time and space.");
     }
 }
