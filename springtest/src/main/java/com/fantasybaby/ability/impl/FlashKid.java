@@ -5,6 +5,7 @@ import javax.inject.Inject;
 import com.fantasybaby.ability.IAbility;
 import com.fantasybaby.ability.ISuperHero;
 import com.fantasybaby.annotation.FlashKidAnnotation;
+import com.fantasybaby.bean.Weapon;
 import lombok.NoArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Value;
@@ -41,5 +42,10 @@ public class FlashKid  implements ISuperHero {
     public void usePower() {
         log.info(getSuperHeroName() +"start use Power");
         speed.showPower();
+    }
+
+    @Override
+    public void useWeapon(Weapon weapon) {
+        log.info("flashkid use {}",weapon.getWeaponName());
     }
 }

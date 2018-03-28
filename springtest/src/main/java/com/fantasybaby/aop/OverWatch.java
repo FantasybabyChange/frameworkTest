@@ -1,5 +1,6 @@
 package com.fantasybaby.aop;
 
+import com.fantasybaby.bean.Weapon;
 import lombok.extern.slf4j.Slf4j;
 import org.aspectj.lang.ProceedingJoinPoint;
 import org.aspectj.lang.annotation.After;
@@ -36,11 +37,14 @@ public class OverWatch {
     public void afterReturnMonitorSuperPower(){
         log.info("==============after return monitorSuperPower===========");
     }
-    @Around("monitorSuperPower()")
+    @Around("execution(* com.fantasybaby.ability.ISuperHero.useWeapon(..))")
     public void aroundMonitorSuperPower(ProceedingJoinPoint joinPoint){
         log.info("==============start around monitorSuperPower===========");
         try {
-            joinPoint.proceed();
+            Weapon weapon = new Weapon();
+            weapon.setWeaponName("拦截武器");
+            joinPoint.proceed(new Object[]{weapon});
+            //joinPoint.proceed();
             log.info("==============end around monitorSuperPower===========");
         } catch (Throwable throwable) {
             throwable.printStackTrace();

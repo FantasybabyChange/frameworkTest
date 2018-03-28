@@ -4,6 +4,7 @@ import javax.inject.Inject;
 
 import com.fantasybaby.ability.IAbility;
 import com.fantasybaby.ability.ISuperHero;
+import com.fantasybaby.bean.Weapon;
 import lombok.NoArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -36,5 +37,10 @@ public class FlashMan implements ISuperHero {
         log.info("flash use power start");
         ability.showPower();
         log.info("flash use power end");
+    }
+
+    @Override
+    public void useWeapon(Weapon weapon) {
+        log.info("flash use {}",weapon.getWeaponName());
     }
 }

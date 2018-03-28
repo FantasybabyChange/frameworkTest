@@ -82,4 +82,12 @@ public class BeanWiringTest {
     public void testAOPWithSpecialBean(){
         flash.usePower();
     }
+
+    /**
+     * 通过环绕通知修改参数
+     */
+    @Test
+    public void testAOPWithWeapon(){
+        flash.useWeapon(null);
+    }
 }
