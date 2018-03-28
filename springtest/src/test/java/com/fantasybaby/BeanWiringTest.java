@@ -70,4 +70,8 @@ public class BeanWiringTest {
     public void testGetValueFromProperties(){
         log.info("======"+superHero.getSuperHeroName());
     }
+    @Test
+    public void testAopUserPower(){
+        superHero.usePower();
+    }
 }
