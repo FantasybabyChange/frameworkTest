@@ -3,6 +3,7 @@ package com.fantasybaby.ability.impl;
 import javax.inject.Inject;
 
 import com.fantasybaby.ability.IAbility;
+import com.fantasybaby.ability.IAbilityInfo;
 import com.fantasybaby.ability.ISuperHero;
 import com.fantasybaby.annotation.FlashKidAnnotation;
 import com.fantasybaby.bean.Weapon;
@@ -41,6 +42,11 @@ public class FlashKid  implements ISuperHero {
     @Override
     public void usePower() {
         log.info(getSuperHeroName() +"start use Power");
+        /**
+         * 通过aop添加额外的方法
+         */
+        IAbilityInfo abilityInfo = (IAbilityInfo)speed;
+        abilityInfo.tellAbilityInfo();
         speed.showPower();
     }
 

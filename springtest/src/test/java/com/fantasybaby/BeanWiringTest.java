@@ -90,4 +90,12 @@ public class BeanWiringTest {
     public void testAOPWithWeapon(){
         flash.useWeapon(null);
     }
+
+    /**
+     *通过aop添加额外的方法
+     */
+    @Test
+    public  void testAOPAddMethod(){
+        superHero.usePower();
+    }
 }
