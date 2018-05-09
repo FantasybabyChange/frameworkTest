@@ -23,3 +23,14 @@ hs_err_pid*
 *.iml
 *idea
 *target
+
+.*
+daliy_test/.*
+*/*.iml
+*/*/*.iml
+target
+*/build/*
+*/*/build/*
+*/out/*
+*/gradle
+

@@ -1,0 +1,8 @@
+rootProject.name = 'framwork-test'
+include ':spring-test'
+include ':fantasybaby-common'
+include ':spring-web-test'
+
+project(':spring-test').projectDir = "$rootDir/springtest" as File
+project(':fantasybaby-common').projectDir = "$rootDir/fantasybaby-common" as File
+project(':spring-web-test').projectDir = "$rootDir/spring-web-test" as File

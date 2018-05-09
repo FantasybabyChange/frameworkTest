@@ -1,0 +1,4 @@
+
+apply plugin: 'war'
+archivesBaseName='spring-web-test'
+description = 'spring-web-test Maven Webapp'
