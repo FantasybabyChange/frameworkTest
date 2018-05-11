@@ -14,7 +14,7 @@ import org.springframework.stereotype.Component;
  */
 @Aspect
 @Component
-@Slf4j
+    @Slf4j
 public class AdapterInvokeCount {
     private static final long ONE_MINUTE = 1;
 
