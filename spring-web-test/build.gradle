@@ -7,6 +7,8 @@ dependencies{
     "org.springframework:spring-webmvc:$springVersion",
     "org.springframework:spring-test:$springVersion",
     "org.springframework:spring-context:$springVersion",
-    "javax.servlet:servlet-api:$servletVersion")
+    "javax.servlet:servlet-api:$servletVersion" ,
+//    "javax.servlet:jsp-api:$jspVersion"
+    )
 
 }

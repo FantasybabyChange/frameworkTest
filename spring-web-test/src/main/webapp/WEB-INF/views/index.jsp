@@ -1,45 +1,65 @@
+<%--
+  Created by IntelliJ IDEA.
+  User: fanta
+  Date: 2018-06-12
+  Time: 22:11
+  To change this template use File | Settings | File Templates.
+--%>
+<%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <html>
-<script type="text/javascript">
-    function zLoginCheck() {
-        var Account = 'admin';
-        var Password = 'DC483E80A7A0BD9EF71D8CF973673924';
+<head>
+    <title>js中的Ajax经典示例</title>
+    <script type="text/javascript">
 
-        var str = {
-            Account: Account,
-            Password: Password
-        }
-        $.ajax({
-            type: "POST",
-            url: 'localhost:8080',
-            dataType: 'json',
-            data: JSON.stringify(str),//
-            beforeSend: function (request) {
-                request.setRequestHeader("Method", "Login");
-                request.setRequestHeader("timespan", "1487586970772");
-                request.setRequestHeader("Nonce", "726757");
-                request.setRequestHeader("Token", "615d1c0ab53315a2");
-                request.setRequestHeader("Account", "");
-                request.setRequestHeader("Source", "2");
-                request.setRequestHeader("Version", "139");
-                request.setRequestHeader("Sign", "5329E35A3F60B7DFA147D20EF377888C");
-                request.setRequestHeader("Host", "wsmvip.aisidi.com");
-                request.setRequestHeader("Content - Length", "76");
-            },
-            success: function (data) {
-                if (data.Code == "0000") {
-                    alert(JSON.stringify(data.Data));
-                    alert("Token:" + data.Data.Token);
-                } else {
-                    alert('登录失败:' + data.Message);
-                }
-            },
-            complete: function (XMLHttpRequest, textStatus) {
-                this; // 调用本次AJAX请求时传递的options参数
+        function ajax() {
+
+            //先声明一个异步请求对象
+            var xmlHttpReg = null;
+            if (window.ActiveXObject) {//如果是IE
+
+                xmlHttpReg = new ActiveXObject("Microsoft.XMLHTTP");
+
+            } else if (window.XMLHttpRequest) {
+
+                xmlHttpReg = new XMLHttpRequest(); //实例化一个xmlHttpReg
             }
-        });
-    }
-</script>
-<body >
-<h2>Hello World!</h2>
+
+            //如果实例化成功,就调用open()方法,就开始准备向服务器发送请求
+            if (xmlHttpReg != null) {
+                xmlHttpReg.open("get", "http://localhost:8080", true);
+                xmlHttpReg.send(null);
+                xmlHttpReg.onreadystatechange = doResult; //设置回调函数
+
+            }
+
+            //回调函数
+            //一旦readyState的值改变,将会调用这个函数,readyState=4表示完成相应
+
+            //设定函数doResult()
+            function doResult() {
+
+                if (xmlHttpReg.readyState == 4) {//4代表执行完成
+
+
+                    if (xmlHttpReg.status == 200) {//200代表执行成功
+                        //将xmlHttpReg.responseText的值赋给ID为resText的元素
+                        document.getElementById("resText").innerHTML = xmlHttpReg.responseText;
+
+
+                    }
+                }
+
+            }
+
+
+        }
+    </script>
+</head>
+<body>
+
+<div id="resText"></div>
+<form method=get action="">
+    <input type="button" value="呵呵哒"  onclick="ajax();"/>
+</form>
 </body>
 </html>

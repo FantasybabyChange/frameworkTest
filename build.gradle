@@ -7,15 +7,17 @@ subprojects {
 //  apply plugin: 'net.ltgt.apt'
   sourceCompatibility = 1.8
   targetCompatibility = 1.8
-  tasks.withType(JavaCompile) {
+  [compileJava,javadoc,compileTestJava]*.options*.encoding='UTF-8'
+/*  tasks.withType(JavaCompile) {
   	options.encoding = 'UTF-8'
-  }
+  }*/
   ext{
     junitVersion = '4.12'
     springVersion ='5.0.4.RELEASE'
     lombokVersion ='1.16.16'
     logbackVersion = '1.1.1'
     servletVersion = '3.0-alpha-1'
+    jspVersion = '2.0'
   }
   dependencies{
     compile group: 'org.slf4j', name: 'slf4j-api', version:'1.7.10'
@@ -29,8 +31,8 @@ subprojects {
   
   repositories {
     mavenLocal()
-    mavenCentral()
-//    maven { url "http://localhost:8081/nexus/content/groups/public/" }
+//    mavenCentral()
+    maven { url "http://localhost:8081/nexus/content/groups/public/" }
     maven{url "http://maven.aliyun.com/nexus/content/groups/public/"}
 //    jcenter()
   }
