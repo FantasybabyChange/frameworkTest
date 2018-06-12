@@ -2,3 +2,11 @@
 apply plugin: 'war'
 archivesBaseName='spring-web-test'
 description = 'spring-web-test Maven Webapp'
+dependencies{
+    compile("org.springframework:spring-web:$springVersion",
+    "org.springframework:spring-webmvc:$springVersion",
+    "org.springframework:spring-test:$springVersion",
+    "org.springframework:spring-context:$springVersion",
+    "javax.servlet:servlet-api:$servletVersion")
+
+}
