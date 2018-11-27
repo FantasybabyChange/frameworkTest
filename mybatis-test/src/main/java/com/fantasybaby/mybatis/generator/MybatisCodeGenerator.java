@@ -44,15 +44,15 @@ public class MybatisCodeGenerator {
         GlobalConfig gc = new GlobalConfig();
         String projectPath = System.getProperty("user.dir");
         gc.setOutputDir(projectPath + "/src/main/java");
-        gc.setAuthor("jobob");
+        gc.setAuthor("reid.liu");
         gc.setOpen(false);
         mpg.setGlobalConfig(gc);
 
         // 数据源配置
         DataSourceConfig dsc = new DataSourceConfig();
-        dsc.setUrl("jdbc:mysql://localhost:3306/evo_wes?useUnicode=true&useSSL=false&characterEncoding=utf8");
+        dsc.setUrl("jdbc:mysql://192.168.20.222:3306/evo_wes?useUnicode=true&useSSL=false&characterEncoding=utf8");
         // dsc.setSchemaName("public");
-        dsc.setDriverName("com.mysql.jdbc.Driver");
+        dsc.setDriverName("com.mysql.cj.jdbc.Driver");
         dsc.setUsername("root");
         dsc.setPassword("root123");
         mpg.setDataSource(dsc);
@@ -60,7 +60,7 @@ public class MybatisCodeGenerator {
         // 包配置
         PackageConfig pc = new PackageConfig();
         pc.setModuleName("picking");
-        pc.setParent("com.fantasybaby.evo_wes");
+        pc.setParent("com.fantasybaby.wes");
         mpg.setPackageInfo(pc);
 
         // 自定义配置
